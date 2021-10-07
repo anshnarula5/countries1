@@ -1,0 +1,12 @@
+.countries{
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

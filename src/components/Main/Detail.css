@@ -1,0 +1,12 @@
+li{
+    text-decoration: none;
+}
+.detail{
+    height: 90vh;
+}
+
+@media (max-width: 768px) { 
+    .detail{
+        height: 100%;
+    }
+ }

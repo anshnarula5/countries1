@@ -1,0 +1,14 @@
+.map{
+    background-color: #f1faee;
+    height: 90vh;
+}
+#chartdiv{
+    width: 100%;
+}
+
+
+@media (max-width: 768px) { 
+    .map{
+        height: 100%;
+    }
+ }

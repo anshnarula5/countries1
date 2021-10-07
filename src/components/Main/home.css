@@ -1,0 +1,27 @@
+.home{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("../../globe.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.ab {
+    text-decoration: none;
+    transition: all .5s ease;
+    color: #fff;
+    border: 1px solid white;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    border-radius: 4px;
+}
+.ab:hover {
+    color: #001F3F;
+    background-color: #fff;
+}

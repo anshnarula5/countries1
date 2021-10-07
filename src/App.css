@@ -1,0 +1,13 @@
+.app{
+  display: flex;
+  flex-direction: column;
+  background-color: #f1faee;
+  justify-content: space-between;
+}
+#chartdiv {
+  width: 90vh;
+  height: 500px;
+}
+a{
+  text-decoration: none;
+}
