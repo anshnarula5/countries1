@@ -14,13 +14,12 @@ const Detail = () => {
       <img
         src={loading}
         alt=""
-        style={{ width: "200px", height: "200px", height: "100%" }}
+        style={{ width: "200px",  height: "100%" }}
         className="col-md-8 offset-5"
       />
     );
   const detail = data[0];
   const currencies = Object.values(detail?.currencies)[0].name;
-  console.log(detail)
 
   return (
     <div className="container">
@@ -70,7 +69,7 @@ const Detail = () => {
               <p className="mb-3">
                 <strong>Borders</strong> :{" "}
                 {detail.borders.length > 0
-                  ? detail.borders.map((border) => <span>{border} </span>)
+                  ? detail.borders.map((border) => <span key = {Math.random()}>{border} </span>)
                   : "No borders"}
               </p>
             </div>

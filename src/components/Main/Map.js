@@ -118,13 +118,13 @@ const Map = () => {
           ) : (
             <div>
               <img
-                class="card-img-top mt-5"
+                className="card-img-top mt-5"
                 src={detail.flags[0]}
                 alt="Card image cap"
               />
-              <div class="card-body">
-                <h5 class="card-title display-5">{detail.name.common}</h5>
-                <p class="card-text">
+              <div className="card-body">
+                <h5 className="card-title display-5">{detail.name.common}</h5>
+                <p className="card-text">
                   {detail?.region} ({detail?.subregion})
                 </p>
               </div>

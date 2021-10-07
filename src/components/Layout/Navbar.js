@@ -5,17 +5,17 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand display-4" href=".">
+        <Link className="navbar-brand display-4" to="/">
           <h2>Countries</h2>
-        </a>
-        <ul class="navbar-nav d-flex flex-row ">
-          <li class="nav-item mx-3">
-            <Link to="/map" class="nav-link fs-5">
+        </Link>
+        <ul className="navbar-nav d-flex flex-row ">
+          <li className="nav-item mx-3">
+            <Link to="/map" className="nav-link fs-5">
               Map
             </Link>
           </li>
-          <li class="nav-item active mx-3">
-            <Link to="/country" class="nav-link fs-5 ">
+          <li className="nav-item active mx-3">
+            <Link to="/country" className="nav-link fs-5 ">
               Flags{" "}
             </Link>
           </li>

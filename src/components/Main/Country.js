@@ -16,7 +16,6 @@ const Country = () => {
         setFiltered(data)
         data.message ? setExist(false) : setExist(true)
       });
-    console.log(filtered);
   }, [search, setFiltered]);
 
   if (isFetching)
@@ -31,10 +30,10 @@ const Country = () => {
         <label htmlFor="search" className="display-6 text-center my-3">
           Search for a country
         </label>
-        <div class="form-group mx-sm-3 mb-2 col-md-4 offset-3">
+        <div className="form-group mx-sm-3 mb-2 col-md-4 offset-3">
           <input
             type="text"
-            class="form-control rounded mb-5 "
+            className="form-control rounded mb-5 "
             id="search"
             placeholder="Country"
             value = {search}
