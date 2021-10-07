@@ -77,12 +77,12 @@ const Map = () => {
       // Hide Antarctica
       polygonSeries.exclude = ["AQ"];
 
-      // Small map
-      chart.smallMap = new am4maps.SmallMap();
-      // Re-position to top right (it defaults to bottom left)
-      chart.smallMap.align = "right";
-      chart.smallMap.valign = "top";
-      chart.smallMap.series.push(polygonSeries);
+      // Small map  
+      // chart.smallMap = new am4maps.SmallMap();
+      // // Re-position to top right (it defaults to bottom left)
+      // chart.smallMap.align = "right";
+      // chart.smallMap.valign = "top";
+      // chart.smallMap.series.push(polygonSeries);
 
       // Zoom control
       chart.zoomControl = new am4maps.ZoomControl();

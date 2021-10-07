@@ -68,7 +68,7 @@ const Detail = () => {
             <div className="border-bottom mb-3">
               <p className="mb-3">
                 <strong>Borders</strong> :{" "}
-                {detail.borders.length > 0
+                {detail.borders && detail.borders.length > 0
                   ? detail.borders.map((border) => <span key = {Math.random()}>{border} </span>)
                   : "No borders"}
               </p>
