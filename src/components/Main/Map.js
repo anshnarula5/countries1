@@ -7,6 +7,7 @@ import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import { useGetNameQuery } from "../../redux/nameApi";
 import "./Map.css";
 import loading from "../../loading.svg";
+import { Link } from "react-router-dom";
 
 am4core.useTheme(am4themes_animated);
 
@@ -19,7 +20,7 @@ const Map = () => {
     // let chart = am4core.create("chartdiv", am4charts.TreeMap);
     var chart = am4core.create("chartdiv", am4maps.MapChart);
 
-    console.log(chart)
+    console.log(chart);
 
     // ... chart code goes here ...
     am4core.ready(function () {
@@ -31,7 +32,6 @@ const Map = () => {
 
       /* Set map definition */
       chart.geodata = am4geodata_worldLow;
-
 
       /* Set projection */
       chart.projection = new am4maps.projections.Miller();
@@ -77,7 +77,7 @@ const Map = () => {
       // Hide Antarctica
       polygonSeries.exclude = ["AQ"];
 
-      // Small map  
+      // Small map
       // chart.smallMap = new am4maps.SmallMap();
       // // Re-position to top right (it defaults to bottom left)
       // chart.smallMap.align = "right";
@@ -105,7 +105,7 @@ const Map = () => {
   return (
     <div className="container">
       <div className="row map">
-      <div className="col-md-3 text-center mt-5 ml-5">
+        <div className="col-md-3 text-center mt-5 ml-5">
           {!country ? (
             <h4 className="mt-5">Click on a country to view details</h4>
           ) : isFetching ? (
@@ -127,6 +127,9 @@ const Map = () => {
                 <p className="card-text">
                   {detail?.region} ({detail?.subregion})
                 </p>
+                <div className="btn btn-primary">
+                  <Link to={`/detail/${detail.name.common}`} style = {{textDecoration : "none", color : "white"}}>Explore</Link>
+                </div>
               </div>
             </div>
           )}
@@ -134,7 +137,6 @@ const Map = () => {
         <div className="col-md-9 mt-5">
           <div id="chartdiv"></div>
         </div>
-        
       </div>
     </div>
   );
