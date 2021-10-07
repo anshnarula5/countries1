@@ -16,7 +16,10 @@ const Map = () => {
   const detail = !data ? "Loading" : data[0];
 
   useEffect(() => {
-    let chart = am4core.create("chartdiv", am4charts.TreeMap);
+    // let chart = am4core.create("chartdiv", am4charts.TreeMap);
+    var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+    console.log(chart)
 
     // ... chart code goes here ...
     am4core.ready(function () {
@@ -25,10 +28,10 @@ const Map = () => {
       // Themes end
 
       /* Create map instance */
-      var chart = am4core.create("chartdiv", am4maps.MapChart);
 
       /* Set map definition */
       chart.geodata = am4geodata_worldLow;
+
 
       /* Set projection */
       chart.projection = new am4maps.projections.Miller();
@@ -102,10 +105,7 @@ const Map = () => {
   return (
     <div className="container">
       <div className="row map">
-        <div className="col-md-9 mt-5">
-          <div id="chartdiv"></div>
-        </div>
-        <div className="col-md-3 text-center mt-5">
+      <div className="col-md-3 text-center mt-5 ml-5">
           {!country ? (
             <h4 className="mt-5">Click on a country to view details</h4>
           ) : isFetching ? (
@@ -131,6 +131,10 @@ const Map = () => {
             </div>
           )}
         </div>
+        <div className="col-md-9 mt-5">
+          <div id="chartdiv"></div>
+        </div>
+        
       </div>
     </div>
   );
