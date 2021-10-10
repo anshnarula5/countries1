@@ -21,7 +21,7 @@ const Country = () => {
   if (isFetching)
     return (
       <div className = "row">
-        <img src={loading} alt="" style={{ width: "200px", height: "200px"}} className = "col-md-8 offset-5"/>
+        <img src={loading} alt="" style={{ width: "200px", height: "200px"}} className = "col-md-8 offset-md-5 offset-3"/>
       </div>
     );
   return (
@@ -30,10 +30,10 @@ const Country = () => {
         <label htmlFor="search" className="display-6 text-center my-3">
           Search for a country
         </label>
-        <div className="form-group mx-sm-3 mb-2 col-md-4 offset-3">
+        <div className="form-group mx-sm-3 col-md-4 offset-3">
           <input
             type="text"
-            className="form-control rounded mb-5 "
+            className="form-control rounded mb-3 "
             id="search"
             placeholder="Country"
             value = {search}

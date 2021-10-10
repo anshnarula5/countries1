@@ -20,7 +20,6 @@ const Map = () => {
     // let chart = am4core.create("chartdiv", am4charts.TreeMap);
     var chart = am4core.create("chartdiv", am4maps.MapChart);
 
-    console.log(chart);
 
     // ... chart code goes here ...
     am4core.ready(function () {
