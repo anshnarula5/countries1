@@ -14,7 +14,7 @@ const Chart = ({lat, lon}) => {
     const label = weather.map(day => day.dt.toString())
     
     const data = {
-        labels: label,
+        labels: ["Mon","Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         datasets: [
           {
             label: "Max",
