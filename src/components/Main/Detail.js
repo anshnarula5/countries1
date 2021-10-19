@@ -5,21 +5,24 @@ import { useGetNameQuery } from "../../redux/nameApi";
 import CountUp from "react-countup";
 import loading from "../../loading.svg";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import Chart from "./Chart";
 
 const Detail = () => {
-  
   const params = useParams();
   const country = JSON.stringify(params.name);
-  const { data, isFetching } = useGetNameQuery(country);
+  const {data, isFetching} = useGetNameQuery(country);
+  
   if (isFetching)
-    return (
-      <img
-        src={loading}
-        alt=""
-        style={{ width: "200px", height: "100%" }}
-        className="col-md-8 offset-md-5 offset-3"
-      />
-    );
+  return (
+    <img
+      src={loading}
+      alt=""
+      style={{ width: "200px", height: "100%" }}
+      className="col-md-8 offset-md-5 offset-3"
+    />
+  );
+    
+  
   const detail = data[0];
   let currencies = []
   if (detail.currencies) {
@@ -37,7 +40,7 @@ const Detail = () => {
     lat: detail.latlng[0],
     lng: detail.latlng[1],
   };
-
+ 
   return (
     <div className="container">
       <div className="row detail">
@@ -46,20 +49,22 @@ const Detail = () => {
             <img src={detail.flags[0]} alt="" className="shadow mb-3" />
             
             <div className="gmap my-3">
-              <LoadScript googleMapsApiKey={process.env.GOOGLE_MAP_KEY}>
+              <LoadScript googleMapsApiKey={process.env.GOOGLE_MAP_KEY} libraries = {["visualization"]}>
                 <GoogleMap
                   mapContainerStyle={mapStyles}
                   zoom={3}
                   center={defaultCenter}
+                  heatmap = "https://tile.openweathermap.org/map/temp_new/1/1/1/.png?appid=73dee316d83fc8e4312e68d912a37b42"
                 >
                   <Marker position={defaultCenter}/>
                 </GoogleMap>
+
               </LoadScript>
             </div>
           </div>
         </div>
         <div className="right col-md-7">
-          <div className="d-flex flex-column justify-content-center mt-5 text-center display-6 mx-5">
+          <div className="d-flex flex-column justify-content-center mt-5 text-center fs-2 mx-5">
           <h1 className="display-1 mb-5">{detail.name.common}</h1>
             <div className="border-bottom mb-3">
               <p className="mb-3">
@@ -78,13 +83,13 @@ const Detail = () => {
             </div>
             <div className="border-bottom mb-3">
               <p className="mb-3">
-                <strong>Population</strong> :{" "}
+                <strong>Population</strong> :     {" "}
                 <CountUp end={detail.population} duration={1} separator="," />
               </p>
             </div>
             <div className="border-bottom mb-3">
               <p className="mb-3">
-                <strong>Area</strong> :
+                <strong>Area</strong> :   {" "}
                 <CountUp end={detail.area} duration={1} separator="," /> Sq.Kms
               </p>
             </div>
@@ -104,6 +109,12 @@ const Detail = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-8 my-5 offset-md-2 text-center">
+          <h3 className = "mb-3">Average Temperature</h3>
+        <Chart lat={defaultCenter.lat} lon={defaultCenter.lng}/>
         </div>
       </div>
     </div>

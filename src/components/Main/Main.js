@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
 import Country from "./Country";
 import Detail from "./Detail";
 import Map from "./Map";
@@ -14,6 +14,7 @@ const Main = () => {
         <Route exact path="/map" component={Map} />
         <Route exact path="/country" component={Country} />
         <Route path="/detail/:name" component={Detail} />
+        <Redirect to = "/" />
       </Switch>
     </div>
   );
